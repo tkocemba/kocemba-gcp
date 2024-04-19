@@ -5,11 +5,15 @@ projects:
     dir: "terraform/dev"
     autoplan:
       when_modified: ["*.tf"]
+    execution_order_group: 1
   - name: qa
     dir: "terraform/qa"
     autoplan:
       when_modified: ["*.tf"]
+    execution_order_group: 2
   - name: prd
     dir: "terraform/prd"
     autoplan:
       when_modified: [ "*.tf" ]
+    depends_on: ["qa"]
+    execution_order_group: 3
