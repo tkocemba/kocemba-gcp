@@ -1,0 +1,7 @@
+projects:
+  - name: dev
+    dir: "terraform/dev"
+  - name: qa
+    dir: "terraform/dev"
+  - name: prd
+    dir: "terraform/dev"
