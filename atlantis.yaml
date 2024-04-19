@@ -1,9 +1,15 @@
 version: 3
+# https://github.com/runatlantis/atlantis/pull/3292
 projects:
   - name: dev
     dir: "terraform/dev"
-
+    autoplan:
+      when_modified: ["*.tf"]
   - name: qa
-    dir: "terraform/dev"
+    dir: "terraform/qa"
+    autoplan:
+      when_modified: ["*.tf"]
   - name: prd
-    dir: "terraform/dev"
+    dir: "terraform/prd"
+    autoplan:
+      when_modified: [ "*.tf" ]
