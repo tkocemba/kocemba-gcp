@@ -1,3 +1,3 @@
 # kocemba-gcp
 
-Root repository which creates google cloud accounts
+Very simple example with gcp and atlantis
