@@ -1,4 +1,5 @@
 resource "google_cloud_run_service" "default" {
+  count = var.enable ? 1:0
   name     = "cloudrun-srv"
   location = "us-central1"
 
@@ -27,9 +28,10 @@ data "google_iam_policy" "noauth" {
 }
 
 resource "google_cloud_run_service_iam_policy" "noauth" {
-  location    = google_cloud_run_service.default.location
-  project     = google_cloud_run_service.default.project
-  service     = google_cloud_run_service.default.name
+  count = var.enable ? 1:0
+  location    = google_cloud_run_service.default[0].location
+  project     = google_cloud_run_service.default[0].project
+  service     = google_cloud_run_service.default[0].name
 
   policy_data = data.google_iam_policy.noauth.policy_data
 }
