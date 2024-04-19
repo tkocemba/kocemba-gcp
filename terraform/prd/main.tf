@@ -1,5 +1,5 @@
 
 
 module "cloudrun" {
-  source = "../_module/cloudrun"
+  source = "../modules/cloudrun"
 }
