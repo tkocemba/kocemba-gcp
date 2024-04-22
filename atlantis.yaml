@@ -16,6 +16,7 @@ projects:
       enabled: true
     execution_order_group: 2
   - name: prd
+    workflow: production
 #    apply_requirements: [ mergeable, approved, undiverged ]
     dir: "terraform/prd"
     autoplan:
