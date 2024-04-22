@@ -1,0 +1,31 @@
+version: 3
+# https://www.runatlantis.io/docs/repo-level-atlantis-yaml.html#example-using-all-keys
+# forcing rodering
+# https://github.com/runatlantis/atlantis/pull/3292
+projects:
+  - name: dev
+    dir: "terraform/dev"
+    autoplan:
+      when_modified: ["*.tf"]
+      enabled: true
+    execution_order_group: 1
+  - name: qa
+    dir: "terraform/qa"
+    autoplan:
+      when_modified: ["*.tf"]
+      enabled: true
+    execution_order_group: 2
+  - name: prd
+#    apply_requirements: [ mergeable, approved, undiverged ]
+    dir: "terraform/prd"
+    autoplan:
+      when_modified: [ "*.tf" ]
+      enabled: false
+    depends_on: ["qa"]
+    execution_order_group: 3
+workflows:
+  production:
+    apply:
+      steps:
+          # this run is just for demo extra logic should be in seperated tool
+        - run: if [[ "${COMMENT_ARGS}" == "CR" ]]; then terraform apply "${PLANFILE}"; else echo "Pass CR as argument to deploy on prod" && exit 1; fi

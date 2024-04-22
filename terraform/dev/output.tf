@@ -1,3 +1,8 @@
 output "url" {
-  value = google_cloud_run_service.default[*].status
+  value = module.cloudrun.url
+}
+
+
+output test {
+  value = "test"
 }
