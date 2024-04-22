@@ -38,4 +38,4 @@ workflows:
               else 
                 echo "Pass CR as argument to deploy on prod" && exit 1; 
               fi
-            output: show
+#            output: show
