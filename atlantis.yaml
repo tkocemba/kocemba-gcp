@@ -31,6 +31,7 @@ workflows:
           # this run is just for demo extra logic should be in seperated tool
         - run: |
             set -x 
+            echo "$COMMENT_ARGS"
             if [[ "${COMMENT_ARGS}" == "CR" ]]; then 
               terraform apply "${PLANFILE}"; 
             else 
