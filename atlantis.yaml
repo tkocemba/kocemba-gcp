@@ -16,6 +16,7 @@ projects:
       enabled: true
     execution_order_group: 2
   - name: prd
+    workflow: production
 #    apply_requirements: [ mergeable, approved, undiverged ]
     dir: "terraform/prd"
     autoplan:
@@ -28,4 +29,13 @@ workflows:
     apply:
       steps:
           # this run is just for demo extra logic should be in seperated tool
-        - run: if [[ "${COMMENT_ARGS}" == "CR" ]]; then terraform apply "${PLANFILE}"; else echo "Pass CR as argument to deploy on prod" && exit 1; fi
+        - run:
+            command: |
+              set -x 
+              echo "$COMMENT_ARGS"
+              if [ "${COMMENT_ARGS}" == "CR" ]; then 
+                terraform apply "${PLANFILE}"; 
+              else 
+                echo "Pass CR as argument to deploy on prod" && exit 1; 
+              fi
+#            output: show
