@@ -29,4 +29,4 @@ workflows:
     apply:
       steps:
           # this run is just for demo extra logic should be in seperated tool
-        - run: if [[ "${COMMENT_ARGS}" == "CR" ]]; then terraform apply "${PLANFILE}"; else echo "Pass CR as argument to deploy on prod" && exit 1; fi
+        - run: set -x; if [[ "${COMMENT_ARGS}" == "CR" ]]; then terraform apply "${PLANFILE}"; else echo "Pass CR as argument to deploy on prod" && exit 1; fi
