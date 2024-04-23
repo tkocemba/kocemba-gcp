@@ -29,7 +29,7 @@ workflows:
     apply:
       steps:
           # this run is just for demo extra logic should be in seperated tool
-        - run: prd-apply.sh
+        - run: $HOME/prd-apply.sh
 #            command: |
 #              set -x
 #              echo \"$COMMENT_ARGS\"
