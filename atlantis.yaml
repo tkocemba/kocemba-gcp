@@ -31,10 +31,9 @@ workflows:
           # this run is just for demo extra logic should be in seperated tool
         - run:
             command: |
-              #!/usr/bin/env bash
               set -x 
               echo \"$COMMENT_ARGS\"
-              if [[ \"${COMMENT_ARGS}\" == \"\C\R\" ]]; then 
+              if [ \"${COMMENT_ARGS}\" == \"\C\R\" ]; then 
                 terraform apply \"${PLANFILE}\"; 
               else 
                 echo \"Pass CR as argument to deploy on prod\" && exit 1; 
