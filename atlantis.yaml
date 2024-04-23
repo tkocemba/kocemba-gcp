@@ -19,7 +19,7 @@ projects:
     execution_order_group: 2
     depends_on: ["dev"]
   - name: prd
-#    workflow: production
+    workflow: production
     apply_requirements: [ mergeable ]
 #    apply_requirements: [ mergeable, approved, undiverged ]
     dir: "terraform/prd"
