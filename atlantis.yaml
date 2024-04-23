@@ -22,7 +22,7 @@ projects:
     autoplan:
       when_modified: [ "*.tf" , "../modules/*"]
       enabled: false
-    depends_on: ["qa"]
+#    depends_on: ["qa"]
     execution_order_group: 3
 workflows:
   production:
