@@ -15,6 +15,7 @@ projects:
       when_modified: ["*.tf", "../modules/*"]
       enabled: true
     execution_order_group: 2
+    depends_on: ["dev"]
   - name: prd
     workflow: production
 #    apply_requirements: [ mergeable, approved, undiverged ]
@@ -22,7 +23,7 @@ projects:
     autoplan:
       when_modified: [ "*.tf" , "../modules/*"]
       enabled: false
-#    depends_on: ["qa"]
+    depends_on: ["qa"]
     execution_order_group: 3
 workflows:
   production:
