@@ -33,8 +33,8 @@ workflows:
             command: |
               set -x 
               echo \"$COMMENT_ARGS\"
-              if [ ${COMMENT_ARGS}" = \"\C\R\\" ]; then 
-                terraform apply \"${PLANFILE}\"; 
+              if [ ${COMMENT_ARGS}" = \"\C\R\" ]; then 
+                terraform apply ${PLANFILE}; 
               else 
                 echo \"Pass CR as argument to deploy on prod\" && exit 1; 
               fi
