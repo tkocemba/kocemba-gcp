@@ -25,7 +25,7 @@ projects:
     dir: "terraform/prd"
     autoplan:
       when_modified: [ "*.tf" , "../modules/*"]
-      enabled: false
+      enabled: true
     depends_on: ["qa"]
     execution_order_group: 3
 workflows:
