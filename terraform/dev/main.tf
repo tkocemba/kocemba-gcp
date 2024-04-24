@@ -6,5 +6,4 @@ module "cloudrun" {
 //
 
 resource null_resource aaa {
-name = "aa "
 }
