@@ -13,3 +13,6 @@ resource null_resource aaab {
 
 resource null_resource aaab55 {
 }
+
+resource null_resource aaab556 {
+}
