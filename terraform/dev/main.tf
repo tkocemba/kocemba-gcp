@@ -17,5 +17,5 @@ resource null_resource aaab55 {
 resource null_resource aaab556 {
 }
 
-resource null_resource aaab55776 {
-}
+
+resource null_resource user2 {
