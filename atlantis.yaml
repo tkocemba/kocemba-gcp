@@ -28,12 +28,12 @@ projects:
       enabled: true
     depends_on: ["qa"]
     execution_order_group: 3
-workflows:
-  production:
-    apply:
-      steps:
+#workflows:
+ # production:
+  #  apply:
+   #   steps:
           # this run is just for demo extra logic should be in seperated tool
-        - run: $HOME/prd-apply.sh
+    #    - run: $HOME/prd-apply.sh
 #            command: |
 #              set -x
 #              echo \"$COMMENT_ARGS\"
