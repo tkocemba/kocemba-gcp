@@ -21,7 +21,7 @@ resource "null_resource" "prdevfeaturebug" {
   provisioner "local-exec" {
     command = local.command
     environment ={
-      env = tomek
+      env = "tomek"
     }
   }
 
