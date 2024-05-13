@@ -6,7 +6,7 @@ projects:
   - name: dev
     dir: "terraform/envs/dev"
     autoplan:
-      when_modified: ["*.tf", "../modules/*"]
+      when_modified: ["*.tf", "../../modules/*"]
       enabled: true
     execution_order_group: 1
     apply_requirements: [ mergeable, undiverged ]
@@ -14,7 +14,7 @@ projects:
     dir: "terraform/envs/qa"
     apply_requirements: [ mergeable, undiverged ]
     autoplan:
-      when_modified: ["*.tf", "../modules/*"]
+      when_modified: ["*.tf", "../../modules/*"]
       enabled: true
     execution_order_group: 2
     depends_on: ["dev"]
@@ -24,7 +24,7 @@ projects:
 #    apply_requirements: [ mergeable, approved, undiverged ]
     dir: "terraform/envs/prd"
     autoplan:
-      when_modified: [ "*.tf" , "../modules/*"]
+      when_modified: [ "*.tf" , "../../modules/*"]
       enabled: true
     depends_on: ["qa"]
     execution_order_group: 3
