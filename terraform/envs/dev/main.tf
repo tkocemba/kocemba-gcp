@@ -11,5 +11,11 @@ resource "null_resource" "prdev2" {}
 resource "null_resource" "prdevfeature1" {}
 resource "null_resource" "prdevfeature2" {}
 
+resource "null_resource" "prdevfeaturebug" {
+
+  provisioner "local-exec" {
+    command = "set -u; echo $${env}"
+  }
+}
 
 
