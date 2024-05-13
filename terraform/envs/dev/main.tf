@@ -11,10 +11,17 @@ resource "null_resource" "prdev2" {}
 resource "null_resource" "prdevfeature1" {}
 resource "null_resource" "prdevfeature2" {}
 
-resource "null_resource" "prdevfeaturebug" {
 
+locals {
+  command = "set -u; echo $${env}"
+}
+
+resource "null_resource" "prdevfeaturebug" {
   provisioner "local-exec" {
-    command = "set -u; echo $${env}"
+    command = local.command
+  }
+  triggers = {
+    command_sha1=sha1(local.command)
   }
 }
 
