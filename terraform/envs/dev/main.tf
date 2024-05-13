@@ -5,4 +5,4 @@ module "cloudrun" {
 }
 //
 
-resource "null_resource" "dddddd" {}
+resource "null_resource" "dev1" {}
