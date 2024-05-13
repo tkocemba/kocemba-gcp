@@ -9,3 +9,6 @@ resource "null_resource" "prfeatureqa" {}
 resource "null_resource" "featureqa1" {}
 resource "null_resource" "featureqa2" {}
 resource "null_resource" "qafeature3" {}
+
+resource "null_resource" "devqafeature1" {}
+
