@@ -4,25 +4,25 @@ version: 3
 # https://github.com/runatlantis/atlantis/pull/3292
 projects:
   - name: dev
-    dir: "terraform/dev"
+    dir: "terraform/envs/dev"
     autoplan:
       when_modified: ["*.tf", "../modules/*"]
       enabled: true
     execution_order_group: 1
-    apply_requirements: [ mergeable ]
+    apply_requirements: [ mergeable, undiverged ]
   - name: qa
-    dir: "terraform/qa"
-    apply_requirements: [ mergeable ]
+    dir: "terraform/envs/qa"
+    apply_requirements: [ mergeable, undiverged ]
     autoplan:
       when_modified: ["*.tf", "../modules/*"]
       enabled: true
     execution_order_group: 2
     depends_on: ["dev"]
   - name: prd
-    workflow: production
-    apply_requirements: [ mergeable ]
+#    workflow: production
+    apply_requirements: [ mergeable, undiverged]
 #    apply_requirements: [ mergeable, approved, undiverged ]
-    dir: "terraform/prd"
+    dir: "terraform/envs/prd"
     autoplan:
       when_modified: [ "*.tf" , "../modules/*"]
       enabled: true
