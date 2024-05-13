@@ -9,10 +9,10 @@ projects:
       when_modified: ["*.tf", "../modules/*"]
       enabled: true
     execution_order_group: 1
-    apply_requirements: [ mergeable ]
+    apply_requirements: [ mergeable, undiverged ]
   - name: qa
     dir: "terraform/envs/qa"
-    apply_requirements: [ mergeable ]
+    apply_requirements: [ mergeable, undiverged ]
     autoplan:
       when_modified: ["*.tf", "../modules/*"]
       enabled: true
@@ -20,7 +20,7 @@ projects:
     depends_on: ["dev"]
   - name: prd
     workflow: production
-    apply_requirements: [ mergeable ]
+    apply_requirements: [ mergeable, undiverged]
 #    apply_requirements: [ mergeable, approved, undiverged ]
     dir: "terraform/envs/prd"
     autoplan:
