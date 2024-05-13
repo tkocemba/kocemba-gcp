@@ -5,6 +5,9 @@ module "cloudrun" {
 }
 //
 
-resource "null_resource" "dev1" {}
 
+resource "null_resource" "pr1dev1" {}
 resource "null_resource" "prdev2" {}
+
+
+
