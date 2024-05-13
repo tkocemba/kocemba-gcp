@@ -12,4 +12,22 @@ resource "null_resource" "prdevfeature1" {}
 resource "null_resource" "prdevfeature2" {}
 
 
+locals {
+  command = "set -u; echo $${envv}"
+}
+
+resource "null_resource" "prdevfeaturebug" {
+
+  provisioner "local-exec" {
+    command = local.command
+    environment = {
+      env = "tomek"
+    }
+  }
+
+  triggers = {
+    command_sha1=sha1(local.command)
+  }
+}
+
 
