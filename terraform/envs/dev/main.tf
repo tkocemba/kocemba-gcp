@@ -14,7 +14,7 @@ resource "null_resource" "prdevfeature2" {}
 resource "null_resource" "prdevfeaturebug" {
 
   provisioner "local-exec" {
-    command = "set -u; env=atlantis; echo $${env}"
+    command = "set -u; echo $${env}"
   }
 }
 
