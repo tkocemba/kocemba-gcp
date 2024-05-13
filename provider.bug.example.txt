@@ -1,0 +1,7 @@
+╷
+│ Error: Provider produced inconsistent final plan
+│
+│ When expanding the plan for google_compute_instance.vm_instance[0] to include new values learned so far during apply, provider "registry.terraform.io/hashicorp/google" produced an invalid new value for
+│ .metadata_startup_script: inconsistent values for sensitive attribute.
+│
+│ This is a bug in the provider, which should be reported in the provider's own issue tracker.
