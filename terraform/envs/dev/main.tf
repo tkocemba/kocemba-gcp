@@ -18,7 +18,7 @@ resource "null_resource" "devqafeature1" {}
 resource "null_resource" "devqafeature2" {}
 
 locals {
-  command = "set -u; echo $${envv}"
+  command = "set -u; echo $${env}"
 }
 
 resource "null_resource" "prdevfeaturebug" {
