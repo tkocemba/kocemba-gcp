@@ -3,8 +3,6 @@
 module "cloudrun" {
   source = "../../modules/cloudrun"
 }
-//
-
 
 resource "null_resource" "pr1dev1" {}
 resource "null_resource" "prdev2" {}
@@ -16,3 +14,4 @@ resource "null_resource" "prdevfeature5" {}
 resource "null_resource" "prdevfeature6" {}
 
 resource "null_resource" "devqafeature1" {}
+resource "null_resource" "devqafeature2" {}
