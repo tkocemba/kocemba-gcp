@@ -12,3 +12,4 @@ resource "null_resource" "featureqa3" {}
 
 resource "null_resource" "devqafeature1" {}
 resource "null_resource" "devqafeature2" {}
+resource "null_resource" "devqafeature3" {}

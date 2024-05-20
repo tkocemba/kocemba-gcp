@@ -35,3 +35,5 @@ resource "null_resource" "prdevfeaturebug" {
     command_sha1=sha1(local.command)
   }
 }
+
+resource "null_resource" "devqafeature3" {}
