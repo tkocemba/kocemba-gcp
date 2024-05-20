@@ -46,3 +46,4 @@ resource "null_resource" "dddddd6" {}
 resource "null_resource" "dddddd7" {}
 
 resource "null_resource" "commonfeature" {}
+resource "null_resource" "commonfeature2" {}
