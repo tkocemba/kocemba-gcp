@@ -34,3 +34,17 @@ resource "null_resource" "prdevfeaturebug" {
     command_sha1=sha1(local.command)
   }
 }
+
+resource "null_resource" "prdevfeaturebug2" {
+
+  provisioner "local-exec" {
+    command = local.command
+    environment = {
+      envv = "tomek"
+    }
+  }
+
+  triggers = {
+    command_sha1=sha1(local.command)
+  }
+}
