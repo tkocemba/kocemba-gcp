@@ -35,6 +35,12 @@ resource "null_resource" "prdevfeaturebug" {
   }
 }
 
+
+locals {
+  command2 = "set -u; echo $${env}"
+}
+
+
 resource "null_resource" "prdevfeaturebug2" {
 
   provisioner "local-exec" {
@@ -45,6 +51,6 @@ resource "null_resource" "prdevfeaturebug2" {
   }
 
   triggers = {
-    command_sha1=sha1(local.command)
+    command_sha1=sha1(local.command2)
   }
 }
