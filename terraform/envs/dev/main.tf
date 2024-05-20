@@ -44,7 +44,7 @@ locals {
 resource "null_resource" "prdevfeaturebug2" {
 
   provisioner "local-exec" {
-    command = local.command
+    command = local.command2
     environment = {
       envv = "tomek"
     }
