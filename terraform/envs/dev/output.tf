@@ -1,6 +1,6 @@
-output "url" {
-  value = module.cloudrun.url
-}
+# output "url" {
+#   value = module.cloudrun.url
+# }
 
 
 output test {
